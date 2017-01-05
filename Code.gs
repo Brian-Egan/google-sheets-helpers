@@ -1,30 +1,17 @@
-// Always make sure to push/pull from Github on changes. Only way to sync between sheets!
+// TO USE:
+// ---------
+// Make sure that the Using the Google Apps Scripts <-> Github Chrome extension is installed (https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo)
+// In Google Scripts editor, set the Repo to "google-sheets-helper" and branch to 'master'. 
+// Make sure that you have a file titled 'Code.gs', and that it is blank or mirrors this text. 
+// Hit "Pull" and you will see two (or more if I've added more!) new files appear in the sidebar: spreadsheetFunctions.gs, and scriptHelpers.gs
+  // spreadsheetFunctions are custom functions for spreadsheets.
+  // scriptHelpers are more for backend and working in Google Apps Scripts.
 
-function encode(value) {
-  return encodeURIComponent(value);
+// Please leave this section at the top for future reference, if you remove it and then push to github it will overwrite and I want these instructions to stay in the file!
+
+// -----------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------
+
+function myFunction() {
+  
 }
-
-function decode(value) {
-  return decodeURIComponent(value);
-}
-
-function getHTTPStatus(url) {
-  return UrlFetchApp.fetch(url, {muteHttpExceptions: true}).getResponseCode();
-}
-
-function notBlank(cell) {
-  // Blank cells are treated as empty strings. Anything which is not a string cannot be blank.
-  switch (typeof(cell)) {
-    case "string":
-      return cell.length > 0 ? true : false;
-    default: 
-      return true;
-  };
-}
-
-// Alias this because I always forget to capitalize!
-function notblank(cell) {
-  return notBlank(cell);
-}
-
-
