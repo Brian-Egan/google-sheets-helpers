@@ -23,3 +23,4 @@ function testing() {
   _.each([4,5,6,7,8], function(x) { Logger.log("This one is " + x)});
   Logger.log(_.map([1, 2, 3], function(num){ return num * 3; }));
 }
+
