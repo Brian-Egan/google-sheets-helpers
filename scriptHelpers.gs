@@ -6,13 +6,12 @@ var LIBRARIES = {
   underScore: "http://underscorejs.org/underscore-min.js",
 }
 
-// We'll now load all of the libraries references in LIBRARIES. This has to be done outside of a function or else the variables aren't set globally!
+// We'll now load all of the libraries references in LIBS. This has to be done outside of a function or else the variables aren't set globally!
 libraryNames = Object.keys(LIBRARIES);
 for (x in libraryNames) {
   newFunc = loadFromUrl(LIBRARIES[libraryNames[x]]);
   eval('var ' + libraryNames[x] + ' = ' + newFunc);  
 }
-
 
 function loadFromUrl(url) {
   return eval(UrlFetchApp.fetch(url).getContentText());
@@ -23,4 +22,3 @@ function testing() {
   _.each([4,5,6,7,8], function(x) { Logger.log("This one is " + x)});
   Logger.log(_.map([1, 2, 3], function(num){ return num * 3; }));
 }
-
